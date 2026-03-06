@@ -1,0 +1,312 @@
+ @import "tailwindcss";
+ 
+ body {
+    /* Neomorphic Background - Same as k.html */
+    background: #e3e8ef;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    color: #000;
+} 
+
+/* Neomorphic Card Effect - Same as k.html */
+.neomorphic-card {
+    background: #e3e8ef;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 8px 8px 16px #b8bdc8, -8px -8px 16px #ffffff;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+}
+
+.neomorphic-card:hover {
+    box-shadow: 12px 12px 20px #b8bdc8, -12px -12px 20px #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Neomorphic Button Effect */
+.neomorphic-btn {
+    background: #e3e8ef;
+    border-radius: 15px;
+    padding: 12px 24px;
+    box-shadow: 6px 6px 12px #b8bdc8, -6px -6px 12px #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.neomorphic-btn:hover {
+    box-shadow: 8px 8px 16px #b8bdc8, -8px -8px 16px #ffffff;
+    transform: translateY(-1px);
+}
+
+.neomorphic-btn:active {
+    box-shadow: inset 6px 6px 12px #b8bdc8, inset -6px -6px 12px #ffffff;
+    transform: translateY(0);
+}
+
+/* Neomorphic Input Effect */
+.neomorphic-input {
+    background: #e3e8ef;
+    border-radius: 15px;
+    padding: 12px 20px;
+    box-shadow: inset 4px 4px 8px #b8bdc8, inset -4px -4px 8px #ffffff;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.neomorphic-input:focus {
+    box-shadow: inset 6px 6px 12px #b8bdc8, inset -6px -6px 12px #ffffff;
+}
+
+/* Yellow Accent Color - Same as k.html */
+.accent-yellow {
+    color: #f5b841;
+}
+
+.bg-accent-yellow {
+    background: #f5b841;
+    box-shadow: 6px 6px 12px #c9a535, -6px -6px 12px #ffd14d;
+}
+
+/* Neomorphic Container */
+.neomorphic-container {
+    background: #e3e8ef;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 10px 10px 20px #b8bdc8, -10px -10px 20px #ffffff;
+}
+
+/* Text Colors */
+.text-primary {
+    color: #000;
+}
+
+.text-secondary {
+    color: #a0a5b1;
+}
+
+/* Neomorphic Icon Button */
+.neomorphic-icon-btn {
+    background: #e3e8ef;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #b8bdc8, -5px -5px 10px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+}
+
+.neomorphic-icon-btn:hover {
+    box-shadow: 7px 7px 14px #b8bdc8, -7px -7px 14px #ffffff;
+    transform: translateY(-2px);
+}
+
+.neomorphic-icon-btn:active {
+    box-shadow: inset 5px 5px 10px #b8bdc8, inset -5px -5px 10px #ffffff;
+    transform: translateY(0);
+}
+
+/* Neomorphic Progress Bar */
+.neomorphic-progress {
+    background: #d1d5db;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    box-shadow: inset 3px 3px 6px #b8bdc8, inset -3px -3px 6px #ffffff;
+}
+
+.neomorphic-progress-fill {
+    background: #f5b841;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px #c9a535, -3px -3px 6px #ffd14d;
+    transition: width 0.3s ease;
+}
+
+/* Neomorphic Badge */
+.neomorphic-badge {
+    background: #e3e8ef;
+    border-radius: 20px;
+    padding: 8px 16px;
+    box-shadow: 4px 4px 8px #b8bdc8, -4px -4px 8px #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.neomorphic-badge:hover {
+    box-shadow: 6px 6px 10px #b8bdc8, -6px -6px 10px #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Neomorphic Divider */
+.neomorphic-divider {
+    height: 2px;
+    background: linear-gradient(90deg, #b8bdc8, #ffffff);
+    margin: 20px 0;
+    border-radius: 2px;
+}
+
+/* Fix for overflow issues */
+.group {
+    position: relative;
+    overflow: visible;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition-property: transform, box-shadow, background-color, color;
+    transition-timing-function: ease;
+}
+
+/* Prevent layout shift on hover */
+.hover\:scale-105:hover,
+.hover\:scale-110:hover,
+.hover\:-translate-y-2:hover,
+.hover\:-translate-y-3:hover {
+    will-change: transform;
+}
+ 
+ 
+
+/* 
+  <button className="
+  text-[#090909] 
+  px-[1.7em] py-[0.7em] 
+  text-[18px] 
+  rounded-md 
+  bg-[#e8e8e8] 
+  cursor-pointer 
+  border border-[#e8e8e8] 
+  transition-all duration-300 
+  shadow-[6px_6px_12px_#c5c5c5,-6px_-6px_12px_#ffffff]
+  hover:border-white 
+  focus:border-white 
+  active:shadow-[4px_4px_12px_#c5c5c5,-4px_-4px_12px_#ffffff]
+  focus:shadow-[4px_4px_12px_#c5c5c5,-4px_-4px_12px_#ffffff]
+">
+  Tap or Hover Me
+</button> */
+/* Cus
+tom Animations for Interests Carousel */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+/* Carousel specific styles */
+.carousel-card {
+  background: #e3e8ef;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  box-shadow: 8px 8px 16px #b8bdc8, -8px -8px 16px #ffffff;
+}
+
+.carousel-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 12px 12px 20px #b8bdc8, -12px -12px 20px #ffffff;
+}
+
+/* Particle animation */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+.particle {
+  animation: particle-float 4s ease-in-out infinite;
+}
+
+.particle:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.particle:nth-child(4) {
+  animation-delay: 3s;
+}
