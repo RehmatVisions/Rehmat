@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+import { animateFadeInUp, animateScrollFadeUp } from '../utils/gsapAnimations';
 import CertificateCard from './subcomponents/CertificateCard';
 
 // Import certificate images
@@ -9,6 +11,26 @@ import webAI from '../images/webAI.png';
 import prompt from '../images/prompt.png';
 
 const Certification = () => {
+  const headerRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    // Animate header
+    if (headerRef.current) {
+      animateFadeInUp(headerRef.current, { duration: 0.8 });
+    }
+
+    // Animate certificate cards
+    cardsRef.current.forEach((card, index) => {
+      if (card) {
+        animateScrollFadeUp(card, {
+          delay: index * 0.1,
+          duration: 0.8,
+          start: 'top 85%',
+        });
+      }
+    });
+  }, []);
   // Learning Achievement Certificates
   const learningCertificates = [
     {
@@ -73,10 +95,8 @@ const Certification = () => {
     <div className="py-8 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto">
       {/* Main Header */}
       <div 
+        ref={headerRef}
         className="text-center mb-12 sm:mb-20"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-once="true"
       >
         <h1 className="text-3xl sm:text-5xl font-bold mb-4 accent-yellow">
           Learning Achievements & Certifications
@@ -92,10 +112,7 @@ const Certification = () => {
           {learningCertificates.map((cert, index) => (
             <div
               key={index}
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay={index * 150}
-              data-aos-once="true"
+              ref={(el) => (cardsRef.current[index] = el)}
             >
               <CertificateCard {...cert} />
             </div>

@@ -1,9 +1,32 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { animateFadeInUp, animateScrollSlide } from '../utils/gsapAnimations';
 import ExperienceCertificateCard from './subcomponents/ExperienceCertificateCard';
 import nodeInternImg from '../images/nodeintern.png';
 import offerLetterImg from '../images/offerletter.jpeg';
 
 const Experience = () => {
+  const headerRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    // Animate header
+    if (headerRef.current) {
+      animateFadeInUp(headerRef.current, { duration: 0.8 });
+    }
+
+    // Animate experience cards with alternating slide directions
+    cardsRef.current.forEach((card, index) => {
+      if (card) {
+        animateScrollSlide(card, {
+          delay: index * 0.15,
+          duration: 1,
+          direction: index % 2 === 0 ? 'left' : 'right',
+          start: 'top 80%',
+        });
+      }
+    });
+  }, []);
   // Professional Experience Certificates
   const experienceCertificates = [
     {
@@ -47,6 +70,7 @@ const Experience = () => {
     <div className="relative py-8 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto overflow-hidden">
       {/* Header */}
       <div 
+        ref={headerRef}
         className="text-center mb-8 sm:mb-12 relative z-10"
       >
         <h2 className="text-2xl sm:text-3xl font-bold mb-3 accent-yellow">
@@ -65,34 +89,12 @@ const Experience = () => {
       {/* Experience Certificates */}
       <div className="space-y-6 sm:space-y-8 max-w-sm sm:max-w-2xl lg:max-w-5xl mx-auto px-2 sm:px-0 relative z-10">
         {experienceCertificates.map((cert, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, y: 50 }}
-            whileInView={{ 
-              opacity: 1, 
-              x: 0, 
-              y: 0,
-              transition: {
-                type: "spring",
-                damping: 20,
-                stiffness: 100,
-                duration: 0.8,
-                delay: index * 0.3
-              }
-            }}
-            whileHover={{ 
-              scale: 1.02,
-              y: -10,
-              transition: { 
-                type: "spring", 
-                stiffness: 300,
-                damping: 20
-              }
-            }}
-            viewport={{ once: true, amount: 0.2 }}
+            ref={(el) => (cardsRef.current[index] = el)}
           >
             <ExperienceCertificateCard {...cert} />
-          </motion.div>
+          </div>
         ))}
       </div>
 

@@ -1,5 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { animateScrollFadeUp } from '../utils/gsapAnimations';
 import {
   FaMobileAlt,
   FaLaptopCode,
@@ -13,10 +14,23 @@ import {
 } from "react-icons/fa";
 
 const Feautures = () => {
+  const featuresRef = useRef([]);
+
   useEffect(() => {
     if (typeof window !== 'undefined' && window.AOS) {
       window.AOS.refresh();
     }
+
+    // GSAP Scroll Animations
+    featuresRef.current.forEach((feature, index) => {
+      if (feature) {
+        animateScrollFadeUp(feature, {
+          delay: index * 0.08,
+          duration: 0.7,
+          start: 'top 85%',
+        });
+      }
+    });
   }, []);
 
   const features = [
@@ -110,25 +124,10 @@ const Feautures = () => {
       <div className='All-cards'>
         <div className='flex items-center justify-center py-6 flex-wrap gap-8 sm:gap-10 lg:gap-12'>
           {features.map((feature, index) => {
-            const aosAnimations = [
-              'zoom-in',
-              'flip-up',
-              'fade-up',
-              'fade-down',
-              'flip-left',
-              'flip-right',
-              'zoom-in-up',
-              'zoom-in-down',
-              'slide-up'
-            ];
-            const aosAnimation = aosAnimations[index % aosAnimations.length];
-            
             return (
             <motion.div
               key={index}
-              data-aos={aosAnimation}
-              data-aos-duration="1000"
-              data-aos-delay={index * 100}
+              ref={(el) => (featuresRef.current[index] = el)}
               whileHover={{ scale: 1.08, rotate: 3 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}

@@ -1,13 +1,41 @@
+import { useEffect, useRef } from 'react';
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { 
+  animateSlideInLeft, 
+  animateSlideInRight, 
+  animateBounceIn 
+} from '../utils/gsapAnimations';
 import Heading from './subcomponents/Heading';
 import SignInCard from '../components/subcomponents/SignInCard';
 
 const Contacts = () => {
+  const formRef = useRef(null);
+  const infoRef = useRef(null);
+  const iconsRef = useRef([]);
+
+  useEffect(() => {
+    // Animate form card from left
+    animateSlideInLeft(formRef.current, { duration: 1 });
+
+    // Animate info card from right
+    animateSlideInRight(infoRef.current, { duration: 1 });
+
+    // Animate contact icons with bounce
+    iconsRef.current.forEach((icon, index) => {
+      if (icon) {
+        animateBounceIn(icon, {
+          delay: 0.5 + index * 0.15,
+          duration: 0.8,
+        });
+      }
+    });
+  }, []);
+
   return (
     <div className=''>
       {/* Heading */}
-      <div className='my-6 pt-6 text-gray-800' data-aos="fade-up" data-aos-duration="600">
+      <div className='my-6 pt-6 text-gray-800'>
         <Heading title="CONTACT WITH ME" sub="Contact" />
       </div>
 
@@ -15,12 +43,12 @@ const Contacts = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8 px-4 sm:px-6 lg:px-12 py-6 text-gray-800">
         
         {/* Form Card */}
-        <div className="w-full max-w-sm sm:max-w-md lg:max-w-md xl:max-w-lg" data-aos="slide-right" data-aos-duration="1000">
+        <div ref={formRef} className="w-full max-w-sm sm:max-w-md lg:max-w-md xl:max-w-lg">
           <SignInCard />
         </div>
 
         {/* Contact Info Card */}
-        <div className="w-full max-w-sm sm:max-w-md lg:max-w-md xl:max-w-xl" data-aos="slide-left" data-aos-duration="1000" data-aos-delay="200">
+        <div ref={infoRef} className="w-full max-w-sm sm:max-w-md lg:max-w-md xl:max-w-xl">
           <div className="neomorphic-card text-gray-800 rounded-2xl">
 
             <div className="py-6 sm:py-9 px-4 sm:px-9">
@@ -37,6 +65,7 @@ const Contacts = () => {
                 
                 {/* WhatsApp */}
                 <a
+                  ref={(el) => (iconsRef.current[0] = el)}
                   href="https://wa.me/923244646260"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -48,6 +77,7 @@ const Contacts = () => {
 
                 {/* LinkedIn */}
                 <a
+                  ref={(el) => (iconsRef.current[1] = el)}
                   href="https://www.linkedin.com/in/rehmat-ali-01a443350"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -59,6 +89,7 @@ const Contacts = () => {
 
                 {/* Gmail */}
                 <a
+                  ref={(el) => (iconsRef.current[2] = el)}
                   href="mailto:itsrehmet@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"

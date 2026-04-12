@@ -17,6 +17,8 @@ import Home from './components/Home';
 import Chatbot from './components/Chatbot';
 import ScrollToTop from './components/ScrollToTop';
 import ChatbotWidget from './components/ChatbotWidget';
+import AnimatedBackground from './components/AnimatedBackground';
+import WelcomeAnimation from './components/WelcomeAnimation';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -36,6 +38,12 @@ const App = () => {
 
   return (
     <div className="flex flex-col md:flex-row overflow-x-hidden scroll-smooth">
+      {/* Welcome Animation */}
+      <WelcomeAnimation />
+      
+      {/* Animated Background */}
+      <AnimatedBackground />
+
       {/* Navbar */}
       <NAV />
 

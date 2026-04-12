@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { FaEye, FaGithub } from 'react-icons/fa';
+import { animateScrollFadeUp } from '../utils/gsapAnimations';
 import eduisty from '../images/eduisty.jpeg';
 import streamlabs from '../images/streamlabs.jpeg';
 import Gotto from '../images/gotto.jpeg';
@@ -21,7 +23,7 @@ const projectsData = [
     desc: "Built a responsive frontend clone of the Eduisty website using React, focusing on clean UI and modern design.",
     no: "57K",
     url: "https://comfy-cendol-b1f477.netlify.app/",
-    github: "https://github.com/yourusername/eduisty"
+    github: "https://github.com/RehmatAli02/eduisty"
   },
   {
     id: 2,
@@ -31,7 +33,7 @@ const projectsData = [
     desc: "A fully responsive business platform built in React. Styled with passion. Delivered as Gotto.",
     no: "73M",
     url: "https://profound-bavarois-7ff36a.netlify.app/",
-    github: "https://github.com/yourusername/gotto"
+    github: "https://github.com/RehmatAli02/gotto"
   },
   {
     id: 3,
@@ -41,7 +43,7 @@ const projectsData = [
     desc: "A fully responsive Streamlabs-inspired ReactJS project with modern UI, smooth animations, and dynamic component structure.",
     no: "13B",
     url: "https://sprightly-kashata-a0ade8.netlify.app/",
-    github: "https://github.com/yourusername/streamlabs"
+    github: "https://github.com/RehmatAli02/streamlabs"
   },
   {
     id: 4,
@@ -61,7 +63,7 @@ const projectsData = [
     desc: "A responsive React.js fast food website with modern UI, fast performance, and smooth UX — designed for real-world food ordering apps...View",
     no: "",
     url: "https://superlative-quokka-75b99c.netlify.app/",
-    github: "https://github.com/yourusername/koad"
+    github: "https://github.com/RehmatAli02/koad"
   },
   {
     id: 6,
@@ -146,27 +148,24 @@ const projectsData = [
 ];
 
 const Projects = () => {
-  const aosAnimations = [
-    'flip-left',
-    'flip-right',
-    'flip-up',
-    'zoom-in-up',
-    'zoom-in-down',
-    'zoom-in',
-    'slide-up',
-    'slide-down',
-    'slide-left',
-    'slide-right',
-    'flip-down'
-  ];
+  const projectsRef = useRef([]);
+
+  useEffect(() => {
+    projectsRef.current.forEach((project, index) => {
+      if (project) {
+        animateScrollFadeUp(project, {
+          delay: index * 0.05,
+          duration: 0.8,
+          start: 'top 85%',
+        });
+      }
+    });
+  }, []);
 
   return (
     <div className='my-10 text-gray-900'>
       <div 
-        className='py-8 mb-12' 
-        data-aos="fade-up" 
-        data-aos-duration="600"
-        data-aos-easing="ease-in-out">
+        className='py-8 mb-12'>
         <Heading sub="Visit my project and keep your feedback" title="My.Projects" />
       </div>
 
@@ -174,11 +173,7 @@ const Projects = () => {
         {projectsData.map((project, index) => (
           <div
             key={project.id}
-            data-aos={aosAnimations[index % aosAnimations.length]}
-            data-aos-duration="1000"
-            data-aos-delay={index * 120}
-            data-aos-easing="ease-in-out-cubic"
-            data-aos-offset="100"
+            ref={(el) => (projectsRef.current[index] = el)}
             tabIndex={0}
             className="neomorphic-card relative w-full max-w-sm rounded-2xl overflow-hidden
                        transition-all duration-300 cursor-pointer 

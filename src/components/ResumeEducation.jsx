@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+import { animateScrollFadeUp } from '../utils/gsapAnimations';
 import leads from '../images/leads.jpeg';
 import zaff from '../images/zaff.jpeg';
 import nts from '../images/navttc.png';
@@ -39,12 +41,27 @@ const educationData = [
 ];
 
 const ResumeEducation = () => {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    cardsRef.current.forEach((card, index) => {
+      if (card) {
+        animateScrollFadeUp(card, {
+          delay: index * 0.15,
+          duration: 0.8,
+          start: 'top 85%',
+        });
+      }
+    });
+  }, []);
+
   return (
     <div className="text-gray-800 px-4 sm:px-10 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 max-w-6xl mx-auto">
-        {educationData.map((edu) => (
+        {educationData.map((edu, index) => (
           <div
             key={edu.id}
+            ref={(el) => (cardsRef.current[index] = el)}
             tabIndex={0}
             className="neomorphic-card relative max-w-md mx-auto rounded-2xl overflow-hidden
                        transition-all duration-300 cursor-pointer 
@@ -76,24 +93,24 @@ const ResumeEducation = () => {
         ))}
       </div>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mt-10">
-  <a href='/REHMATALI.pdf' download className="neomorphic-btn py-3 px-6 sm:px-10 text-sm sm:text-base font-semibold text-gray-800 
-                     rounded-lg transition hover:scale-105 hover:bg-accent-yellow cursor-pointer flex items-center justify-around gap-2">
-    DOWNLOAD CV   <svg
-    className="h-5"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
+  <a 
+    href='/Rehmat_Ali.pdf' 
+    download="Rehmat_Ali_CV.pdf" 
+    className="neomorphic-btn py-4 px-8 sm:px-12 text-sm sm:text-base font-bold text-gray-800 
+               rounded-xl transition-all duration-300 hover:scale-105 hover:bg-accent-yellow 
+               cursor-pointer flex items-center justify-center gap-3 group"
   >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 4v12" />
-  </svg>
+    <svg
+      className="h-5 w-5 transition-transform group-hover:translate-y-1"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 4v12" />
+    </svg>
+    DOWNLOAD CV
   </a>
-{/* 
-  <button className="py-3 px-6 sm:px-10 text-sm sm:text-base font-semibold text-pink-600 
-                     bg-gradient-to-br from-purple-400 via-purple-200 to-pink-200 
-                     rounded-lg shadow-md transition hover:scale-105 cursor-pointer">
-    DOWNLOAD CERTIFICATES
-  </button> */}
 </div>
 
                      

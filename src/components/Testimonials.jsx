@@ -1,5 +1,8 @@
+import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -9,6 +12,8 @@ import Heading from './subcomponents/Heading';
 import zeff from '../images/zeff.jpeg';
 import nts from '../images/nts.jpeg';
 import leads from '../images/leads.jpeg';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
@@ -29,15 +34,37 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      gsap.fromTo(
+        swiperRef.current,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: swiperRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 md:px-10 mt-20 rounded-3xl">
       {/* Heading */}
-      <div className="mb-16 text-center" data-aos="fade-up" data-aos-duration="600">
+      <div className="mb-16 text-center">
         <Heading sub="What Instructors Say" title="Testimonials" />
       </div>
 
       {/* Swiper Section */}
-      <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" className="relative">
+      <div ref={swiperRef} className="relative">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={40}
@@ -57,9 +84,6 @@ const Testimonials = () => {
                 
                 {/* Institute Info Card */}
                 <div
-                  data-aos="slide-right"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
                   tabIndex={0}
                   className="neomorphic-card w-full lg:w-1/2
                              p-8 sm:p-10 rounded-3xl 
@@ -110,9 +134,6 @@ const Testimonials = () => {
 
                 {/* Testimonial Card */}
                 <div
-                  data-aos="slide-left"
-                  data-aos-duration="800"
-                  data-aos-delay="400"
                   tabIndex={0}
                   className="neomorphic-card w-full lg:w-1/2
                              p-8 sm:p-10 rounded-3xl 

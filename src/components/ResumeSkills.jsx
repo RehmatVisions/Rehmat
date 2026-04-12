@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { animateScrollScaleRotate, setupHoverLift } from '../utils/gsapAnimations';
 import htmlImg from '../images/html.jpeg';
 import cssImg from '../images/css.png';
 import jsImg from '../images/JS.jpeg';
@@ -12,6 +13,27 @@ import stripeImg from '../images/stripe.png';
 import socketImg from '../images/socket.png';
 
 const ResumeSkills = () => {
+  const skillsRef = useRef([]);
+
+  useEffect(() => {
+    skillsRef.current.forEach((skill, index) => {
+      if (skill) {
+        // Scroll animation
+        animateScrollScaleRotate(skill, {
+          delay: index * 0.05,
+          duration: 0.8,
+          start: 'top 90%',
+        });
+
+        // Hover animation
+        setupHoverLift(skill, {
+          yOffset: -10,
+          rotation: 5,
+          duration: 0.3,
+        });
+      }
+    });
+  }, []);
   const skills = [
     { img: htmlImg, skill: "HTML" },
     { img: cssImg, skill: "CSS" },
@@ -36,9 +58,7 @@ const ResumeSkills = () => {
         {skills.map((skillData, index) => (
           <div
             key={index}
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay={index * 50}
+            ref={(el) => (skillsRef.current[index] = el)}
           >
             <div
               tabIndex={0}
