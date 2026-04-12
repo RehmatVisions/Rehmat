@@ -38,7 +38,7 @@ const HeroSec = () => {
         <h1
           data-aos="fade-right"
           data-aos-duration="600"
-          className="font-bold text-xl sm:text-2xl md:text-3xl animate-pulse text-gray-800 mb-2"
+          className="font-bold text-xl sm:text-2xl md:text-3xl animate-pulse accent-yellow mb-2"
         >
           Rehmat Ali
         </h1>
@@ -91,7 +91,7 @@ const HeroSec = () => {
         {/* Social & Skills */}
         <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
           <div data-aos="fade-right" data-aos-duration="600" data-aos-delay="300">
-            <h3 className="text-sm sm:text-md font-medium tracking-wide text-gray-700 mb-3">
+            <h3 className="text-sm sm:text-md font-medium tracking-wide accent-yellow mb-3">
               Find me
             </h3>
             <div className="flex items-center gap-4 flex-wrap">
@@ -112,7 +112,7 @@ const HeroSec = () => {
           </div>
 
           <div data-aos="fade-left" data-aos-duration="600" data-aos-delay="300">
-            <h3 className="text-sm sm:text-md font-medium tracking-wide text-gray-700 mb-3">
+            <h3 className="text-sm sm:text-md font-medium tracking-wide accent-yellow mb-3">
               Best skills on
             </h3>
             <div className="flex items-center gap-4 flex-wrap">

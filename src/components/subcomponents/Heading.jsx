@@ -5,7 +5,7 @@ const Heading = (props) => {
     <div className="text-center space-y-3 px-4">
 
       {/* Subheading */}
-      <h4 className="text-[#f5b841] text-base md:text-lg tracking-widest">
+      <h4 className="text-[#f5b841] text-base md:text-lg tracking-widest font-semibold">
         {props.sub}
       </h4>
 

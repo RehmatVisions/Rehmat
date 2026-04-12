@@ -159,7 +159,7 @@ const SignInCard = () => {
 
   return (
     <div className="max-w-[450px] bg-gradient-to-t from-white to-[#f4f7fb] rounded-[40px] p-[25px_35px] border-[5px] border-white shadow-[rgba(133,189,215,0.88)_0px_30px_30px_-20px] m-5">
-      <div className="text-center font-black text-[30px] text-red-400">Get In Touch</div>
+      <div className="text-center font-black text-[30px] accent-yellow">Get In Touch</div>
 
       <form onSubmit={handleSubmit} className="mt-5">
         <input
@@ -168,7 +168,7 @@ const SignInCard = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter Name"
-          className="w-full bg-white border-none p-[15px_20px] rounded-[20px] mt-4 shadow-[0px_10px_10px_-5px_#cff0ff] border-x-2 border-transparent focus:outline-none focus:border-[#12B1D1]"
+          className="w-full bg-white border-none p-[15px_20px] rounded-[20px] mt-4 shadow-[0px_10px_10px_-5px_#cff0ff] border-x-2 border-transparent focus:outline-none focus:border-[#f5b841]"
         />
         <input
           required
@@ -176,20 +176,20 @@ const SignInCard = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter Your Email"
-          className="w-full bg-white border-none p-[15px_20px] rounded-[20px] mt-4 shadow-[0px_10px_10px_-5px_#cff0ff] border-x-2 border-transparent focus:outline-none focus:border-[#12B1D1]"
+          className="w-full bg-white border-none p-[15px_20px] rounded-[20px] mt-4 shadow-[0px_10px_10px_-5px_#cff0ff] border-x-2 border-transparent focus:outline-none focus:border-[#f5b841]"
         />
         <textarea
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Write Message..."
-          className="w-full bg-white border-none p-[20px_20px] rounded-[20px] mt-4 shadow-[0px_10px_10px_-5px_#cff0ff] border-x-2 border-transparent focus:outline-none focus:border-[#12B1D1]"
+          className="w-full bg-white border-none p-[20px_20px] rounded-[20px] mt-4 shadow-[0px_10px_10px_-5px_#cff0ff] border-x-2 border-transparent focus:outline-none focus:border-[#f5b841]"
         ></textarea>
 
         <input
           type="submit"
           value="Send Message"
-          className="cursor-pointer block w-full font-bold neomorphic-btn text-gray-800 py-[15px] mt-5 rounded-[20px] transition-all duration-200 hover:scale-[1.03] hover:bg-accent-yellow active:scale-[0.95]"
+          className="cursor-pointer block w-full font-bold neomorphic-btn text-gray-800 py-[15px] mt-5 rounded-[20px] transition-all duration-200 hover:scale-[1.03] hover:bg-accent-yellow hover:text-white active:scale-[0.95]"
         />
       </form>
 

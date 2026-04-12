@@ -105,7 +105,7 @@ const ExperienceCertificateCard = ({
       <div className="p-4 sm:p-6">
         {/* Header */}
         <div className="mb-3 sm:mb-4">
-          <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1 sm:mb-2 group-hover:text-[#f5b841] transition-colors duration-300 leading-tight">
+          <h3 className="text-lg sm:text-xl font-bold accent-yellow mb-1 sm:mb-2 transition-colors duration-300 leading-tight">
             {position}
           </h3>
           <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-sm text-gray-600 mb-2 sm:mb-3">
@@ -122,12 +122,12 @@ const ExperienceCertificateCard = ({
 
         {/* Technologies */}
         <div className="mb-3 sm:mb-4">
-          <h5 className="text-xs sm:text-sm font-semibold text-gray-700 mb-2">Technologies Used:</h5>
+          <h5 className="text-xs sm:text-sm font-semibold accent-yellow mb-2">Technologies Used:</h5>
           <div className="flex flex-wrap gap-1 sm:gap-2">
             {technologies.split(', ').map((tech, index) => (
               <span
                 key={index}
-                className="px-2 py-1 sm:px-3 sm:py-1 neomorphic-badge text-gray-700 rounded-full text-xs font-medium"
+                className="px-2 py-1 sm:px-3 sm:py-1 neomorphic-badge text-gray-700 rounded-full text-xs font-medium hover:bg-accent-yellow hover:text-white transition-all duration-300"
               >
                 {tech}
               </span>
@@ -144,7 +144,7 @@ const ExperienceCertificateCard = ({
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           <button
             onClick={handleView}
-            className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 neomorphic-btn text-gray-800 rounded-lg sm:rounded-xl font-medium transition-all duration-300 hover:bg-accent-yellow text-sm sm:text-base"
+            className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 neomorphic-btn text-gray-800 rounded-lg sm:rounded-xl font-medium transition-all duration-300 hover:bg-accent-yellow hover:text-white text-sm sm:text-base"
           >
             <FiExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>{buttonText || "View Certificate"}</span>
@@ -152,7 +152,7 @@ const ExperienceCertificateCard = ({
           
           <button
             onClick={handleDownload}
-            className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 neomorphic-btn text-gray-800 rounded-lg sm:rounded-xl font-medium transition-all duration-300 hover:bg-accent-yellow text-sm sm:text-base"
+            className="flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3 neomorphic-btn text-gray-800 rounded-lg sm:rounded-xl font-medium transition-all duration-300 hover:bg-accent-yellow hover:text-white text-sm sm:text-base"
           >
             <FiDownload className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Download</span>

@@ -23,7 +23,11 @@ const ResumeSkills = () => {
     { img: mongoImg, skill: "MongoDB" },
     { img: githubImg, skill: "GitHub" },
     { img: stripeImg, skill: "Stripe" },
-    { img: socketImg, skill: "Socket.IO" }
+    { img: socketImg, skill: "Socket.IO" },
+    { img: nodeImg, skill: "Redis", icon: "🔴" },
+    { img: nodeImg, skill: "Firebase Push", icon: "🔔" },
+    { img: expressImg, skill: "REST APIs", icon: "🔌" },
+    { img: nodeImg, skill: "Cron Jobs", icon: "⏰" }
   ];
 
   return (
@@ -41,9 +45,15 @@ const ResumeSkills = () => {
               className="neomorphic-card text-gray-800 font-medium w-52 h-60 p-6 rounded-2xl 
                          flex flex-col items-center justify-center
                          transition-all duration-300 ease-in-out 
-                         hover:text-[#f5b841] focus:text-[#f5b841] 
-                         hover:scale-105 focus:scale-105 outline-none"
+                         hover:text-white hover:bg-accent-yellow
+                         focus:text-white focus:bg-accent-yellow
+                         hover:scale-105 focus:scale-105 outline-none relative"
             >
+              {skillData.icon && (
+                <div className="absolute top-2 right-2 text-3xl opacity-70">
+                  {skillData.icon}
+                </div>
+              )}
               <img className="h-30 w-30 rounded-full mb-4" src={skillData.img} alt="Skill" loading="lazy" decoding="async" />
               <h2 className="text-xl sm:text-2xl font-semibold text-center">
                 {skillData.skill}

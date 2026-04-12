@@ -11,7 +11,7 @@ const NAV = () => {
     flex items-center justify-center text-base font-semibold 
     transition-all duration-300 
     neomorphic-btn
-    hover:bg-accent-yellow
+    hover:bg-accent-yellow hover:text-white
     hover:scale-105 active:scale-105
     mb-2
   `;
@@ -62,11 +62,11 @@ const NAV = () => {
               shadow-lg hover:shadow-[#f5b841]/50 transition-all duration-300 
               mx-auto sm:block hidden"
           />
-          <h1 className="text-xl font-bold mt-2 text-center text-gray-800">
+          <h1 className="text-xl font-bold mt-2 text-center accent-yellow">
             Rehmat Ali
           </h1>
           <p className="text-sm text-gray-700">
-            Building Clean, Fast & Interactive Frontend Applictions.
+            Building Clean, Fast & Interactive Applictions.
           </p>
 
           {/* Nav Links */}

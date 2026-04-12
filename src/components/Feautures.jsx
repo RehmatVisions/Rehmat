@@ -162,8 +162,8 @@ const Feautures = () => {
                 <h2 className="relative z-10 text-center text-base sm:text-lg lg:text-xl font-extrabold mb-2 
                                text-gray-800
                                transition-all duration-300
-                               group-hover:text-[#f5b841]
-                               group-focus:text-[#f5b841]
+                               group-hover:accent-yellow
+                               group-focus:accent-yellow
                                px-2 font-['Poppins',sans-serif] tracking-tight">
                   {feature.heading}
                 </h2>
@@ -178,7 +178,7 @@ const Feautures = () => {
 
                 {/* Rotating Border Effect */}
                 <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-purple-400 animate-[spin_8s_linear_infinite]"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#f5b841] animate-[spin_8s_linear_infinite]"></div>
                 </div>
               </div>
             </motion.div>

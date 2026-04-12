@@ -57,17 +57,17 @@ const ResumeEducation = () => {
               <img
                 src={edu.img}
                 alt={edu.heading}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-gray-200 transition-all duration-300"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-[#f5b841] transition-all duration-300"
               />
               <div>
-                <h2 className="text-lg sm:text-xl font-semibold">{edu.heading}</h2>
+                <h2 className="text-lg sm:text-xl font-semibold accent-yellow">{edu.heading}</h2>
                 <h4 className="text-sm sm:text-base font-medium opacity-70">{edu.ins}</h4>
               </div>
             </div>
 
-            <span className="inline-block text-xs sm:text-sm px-3 py-1 rounded-full neomorphic-badge text-gray-800 font-semibold 
+            <span className="inline-block text-xs sm:text-sm px-3 py-1 rounded-full neomorphic-badge accent-yellow font-semibold 
                              transition-all duration-300 w-fit
-                             hover:bg-white">
+                             hover:bg-accent-yellow hover:text-white">
               {edu.date}
             </span>
 

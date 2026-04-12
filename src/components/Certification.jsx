@@ -78,7 +78,7 @@ const Certification = () => {
         data-aos-duration="800"
         data-aos-once="true"
       >
-        <h1 className="text-3xl sm:text-5xl font-bold mb-4 text-gray-800">
+        <h1 className="text-3xl sm:text-5xl font-bold mb-4 accent-yellow">
           Learning Achievements & Certifications
         </h1>
         <p className="text-gray-600 max-w-3xl mx-auto text-sm sm:text-lg">

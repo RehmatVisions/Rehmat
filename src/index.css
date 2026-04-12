@@ -72,6 +72,23 @@
     box-shadow: 6px 6px 12px #c9a535, -6px -6px 12px #ffd14d;
 }
 
+/* Yellow hover effects */
+.hover\:bg-accent-yellow:hover {
+    background: #f5b841;
+}
+
+.hover\:text-accent-yellow:hover {
+    color: #f5b841;
+}
+
+.focus\:bg-accent-yellow:focus {
+    background: #f5b841;
+}
+
+.focus\:text-accent-yellow:focus {
+    color: #f5b841;
+}
+
 /* Neomorphic Container */
 .neomorphic-container {
     background: #e3e8ef;

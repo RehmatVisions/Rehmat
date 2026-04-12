@@ -79,7 +79,7 @@ const Testimonials = () => {
                       </div>
                     </div>
                     
-                    <h3 className="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-center mb-6 accent-yellow">
                       Learning Institutes
                     </h3>
                     
@@ -151,7 +151,7 @@ const Testimonials = () => {
                     </p>
                     
                     {/* Name */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold accent-yellow mb-2">
                       {item.name}
                     </h3>
                     

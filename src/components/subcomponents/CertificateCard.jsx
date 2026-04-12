@@ -85,7 +85,7 @@ const CertificateCard = ({
 
             {/* Description */}
             <p 
-              className="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none group-hover:text-gray-700 transition-colors duration-300"
+              className="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none group-hover:text-white transition-colors duration-300"
               data-aos="fade-up"
               data-aos-duration="500"
               data-aos-delay="600"
@@ -105,8 +105,8 @@ const CertificateCard = ({
           >
             {/* Certificate ID */}
             {certificateCode && (
-              <div className="bg-gray-50 rounded-lg p-2 sm:p-3 group-hover:bg-purple-50 transition-colors duration-300">
-                <span className="text-xs sm:text-sm text-gray-500 font-mono group-hover:text-purple-600">
+              <div className="bg-gray-50 rounded-lg p-2 sm:p-3 group-hover:bg-white/20 transition-colors duration-300">
+                <span className="text-xs sm:text-sm text-gray-500 font-mono group-hover:text-white">
                   ID: {certificateCode}
                 </span>
               </div>
@@ -119,7 +119,7 @@ const CertificateCard = ({
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 neomorphic-btn text-gray-800 rounded-lg font-medium transition-all duration-300 hover:transform hover:scale-105 hover:bg-accent-yellow text-sm sm:text-base"
+                  className="flex-1 flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 neomorphic-btn text-gray-800 rounded-lg font-medium transition-all duration-300 hover:transform hover:scale-105 hover:bg-accent-yellow hover:text-white text-sm sm:text-base"
                 >
                   🔗 <span className="hidden xs:inline">View Certificate</span><span className="xs:hidden">View</span>
                 </a>
@@ -128,7 +128,7 @@ const CertificateCard = ({
               <a
                 href={img}
                 download={downloadName}
-                className="flex-1 flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 neomorphic-btn text-gray-800 rounded-lg font-medium transition-all duration-300 hover:transform hover:scale-105 hover:bg-accent-yellow text-sm sm:text-base"
+                className="flex-1 flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 neomorphic-btn text-gray-800 rounded-lg font-medium transition-all duration-300 hover:transform hover:scale-105 hover:bg-accent-yellow hover:text-white text-sm sm:text-base"
               >
                 📥 <span className="hidden xs:inline">Download</span><span className="xs:hidden">Download</span>
               </a>

@@ -24,7 +24,7 @@ const Contacts = () => {
           <div className="neomorphic-card text-gray-800 rounded-2xl">
 
             <div className="py-6 sm:py-9 px-4 sm:px-9">
-              <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-gray-800">
+              <h1 className="text-2xl sm:text-3xl xl:text-4xl font-bold accent-yellow">
                 Rehmat Ali..
               </h1>
 

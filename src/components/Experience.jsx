@@ -49,11 +49,11 @@ const Experience = () => {
       <div 
         className="text-center mb-8 sm:mb-12 relative z-10"
       >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-800">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-3 accent-yellow">
           Professional Experience
         </h2>
         <div 
-          className="w-24 h-1 bg-[#f5b841] mx-auto mb-4"
+          className="w-24 h-1 bg-accent-yellow mx-auto mb-4"
         ></div>
         <p 
           className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base"

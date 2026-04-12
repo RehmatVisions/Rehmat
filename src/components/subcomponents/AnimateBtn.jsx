@@ -19,14 +19,14 @@ const AnimateBtn = () => {
           WebkitBoxReflect:
             'below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4))',
         }}
-        className={`w-fit px-6 sm:px-10 py-2 sm:py-3 bg-gradient-to-r from-red-500 to-orange-500 shadow-xl ${
-          isHovered ? 'shadow-2xl shadow-red-600' : 'shadow-red-600'
-        } uppercase font-serif tracking-widest relative overflow-hidden text-transparent cursor-pointer z-10 text-sm sm:text-base after:absolute after:rounded-full after:bg-red-200 after:h-[85%] after:w-[95%] after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 hover:saturate-[1.15] active:saturate-[1.4]`}
+        className={`w-fit px-6 sm:px-10 py-2 sm:py-3 bg-gradient-to-r from-[#f5b841] to-[#e5a831] shadow-xl ${
+          isHovered ? 'shadow-2xl shadow-[#f5b841]' : 'shadow-[#f5b841]'
+        } uppercase font-serif tracking-widest relative overflow-hidden text-transparent cursor-pointer z-10 text-sm sm:text-base after:absolute after:rounded-full after:bg-[#ffd14d] after:h-[85%] after:w-[95%] after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 hover:saturate-[1.15] active:saturate-[1.4]`}
       >
         Button
 
         <p
-          className={`absolute pb-3 z-40 font-semibold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent top-1/2 left-1/2 -translate-x-1/2 h-full w-full transition-all duration-300 -translate-y-[30%] tracking-widest ${
+          className={`absolute pb-3 z-40 font-semibold bg-gradient-to-r from-[#f5b841] to-[#e5a831] bg-clip-text text-transparent top-1/2 left-1/2 -translate-x-1/2 h-full w-full transition-all duration-300 -translate-y-[30%] tracking-widest ${
             isHovered ? '-translate-y-full' : ''
           }`}
         >
@@ -34,7 +34,7 @@ const AnimateBtn = () => {
         </p>
 
         <p
-          className={`absolute z-40 top-1/2 left-1/2 bg-gradient-to-r from-red-700 to-orange-700 bg-clip-text text-transparent -translate-x-1/2 h-full w-full transition-all duration-400 tracking-widest font-extrabold ${
+          className={`absolute z-40 top-1/2 left-1/2 bg-gradient-to-r from-[#c9a535] to-[#e5a831] bg-clip-text text-transparent -translate-x-1/2 h-full w-full transition-all duration-400 tracking-widest font-extrabold ${
             isHovered ? '-translate-y-[40%]' : 'translate-y-full'
           }`}
         >

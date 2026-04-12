@@ -200,16 +200,16 @@ const Projects = () => {
                             transition-all duration-300">
               
               <div>
-                <h2 className="text-xl font-bold">{project.title}</h2>
+                <h2 className="text-xl font-bold accent-yellow">{project.title}</h2>
                 <p className="text-sm opacity-70 font-medium">{project.company}</p>
               </div>
 
               {project.no && (
                 <span 
                   className="inline-block text-xs px-3 py-1 rounded-full 
-                             bg-gray-200 text-gray-800 font-semibold w-fit
+                             bg-accent-yellow text-white font-semibold w-fit
                              transition-all duration-300
-                             hover:bg-white hover:text-blue-500">
+                             hover:scale-105">
                   {project.no} <span className="animate-pulse">♥</span>
                 </span>
               )}
@@ -227,7 +227,7 @@ const Projects = () => {
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-full 
                              bg-gray-200 text-gray-800 font-semibold text-sm
                              transition-all duration-300
-                             hover:bg-white hover:text-blue-500"
+                             hover:bg-accent-yellow hover:text-white hover:scale-105"
                 >
                   <FaEye /> Live
                 </a>
@@ -239,7 +239,7 @@ const Projects = () => {
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-full 
                              bg-gray-200 text-gray-800 font-semibold text-sm
                              transition-all duration-300
-                             hover:bg-white hover:text-blue-500"
+                             hover:bg-accent-yellow hover:text-white hover:scale-105"
                 >
                   <FaGithub /> GitHub
                 </a>

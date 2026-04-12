@@ -18,7 +18,7 @@ const ChatbotWidget = () => {
                         bg-white shadow-2xl z-[9999] flex flex-col overflow-hidden
                         animate-[slideUp_0.3s_ease-out]">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 text-white 
+          <div className="bg-gradient-to-r from-[#f5b841] via-[#e5a831] to-[#f5b841] text-white 
                           p-3 sm:p-4 flex items-center justify-between
                           shadow-md">
             <div className="flex items-center gap-2 sm:gap-3">
