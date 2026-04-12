@@ -59,26 +59,26 @@ const HeroSec = () => {
   ];
 
   return (
-    <div className="min-h-screen mt-0 pt-0 text-gray-800 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 pb-8 md:pb-12 overflow-hidden">
+    <div className="min-h-screen mt-0 pt-16 md:pt-0 text-gray-800 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 pb-8 md:pb-12 overflow-hidden">
       
       {/* Left Section */}
-      <div className="w-full mt-10 md:w-1/2 p-4 sm:p-6 md:p-8 lg:p-10">
+      <div className="w-full md:w-1/2 p-2 sm:p-4 md:p-8 lg:p-10">
         <h1
           ref={nameRef}
-          className="font-bold text-xl sm:text-2xl md:text-3xl accent-yellow mb-2"
+          className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl accent-yellow mb-2"
         >
           Rehmat Ali
         </h1>
 
         <h4
           ref={titleRef}
-          className="text-xl sm:text-2xl tracking-wide mb-6 text-gray-700 font-medium"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide mb-4 sm:mb-6 text-gray-700 font-medium"
         >
           WELCOME TO MY PORTFOLIO
         </h4>
 
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 leading-tight"
         >
           <span className="text-gray-800">Hi, I'm </span>
           <br className="sm:hidden" />
@@ -88,7 +88,7 @@ const HeroSec = () => {
         </h1>
 
         <h3 
-          className="text-2xl md:text-3xl font-medium tracking-wide mb-6 text-gray-700">
+          className="text-xl sm:text-2xl md:text-3xl font-medium tracking-wide mb-4 sm:mb-6 text-gray-700">
           <Typewriter
             options={{
               strings: ['React Developer', 'Backend Developer', 'MernStack Developer'],
@@ -102,24 +102,27 @@ const HeroSec = () => {
 
         <p 
           ref={descRef}
-          className="text-base sm:text-lg text-gray-700 mb-8 max-w-md">
+          className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 sm:mb-8 max-w-md leading-relaxed"
+        >
           Full-stack MERN developer building fast, modern web applications — specializing in React, Node.js, Express, MongoDB, Tailwind, and JavaScript with a strong focus on design, UX, and performance.
         </p>
 
         {/* Social & Skills */}
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+        <div className="flex flex-col gap-4 sm:gap-6">
           <div ref={socialRef}>
-            <h3 className="text-sm sm:text-md font-medium tracking-wide accent-yellow mb-3">
+            <h3 className="text-xs sm:text-sm md:text-base font-medium tracking-wide accent-yellow mb-2 sm:mb-3">
               Find me
             </h3>
-            <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
               {socialLinks.map((item, index) => (
                 <div 
                   className={cardStyle} 
                   key={index} 
-                  tabIndex={0}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    {item.icon}
+                  tabIndex={0}
+                  style={{ width: '40px', height: '40px' }}
+                >
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
+                    <span className="text-2xl sm:text-3xl md:text-4xl">{item.icon}</span>
                   </a>
                 </div>
               ))}
@@ -127,17 +130,19 @@ const HeroSec = () => {
           </div>
 
           <div ref={skillsRef}>
-            <h3 className="text-sm sm:text-md font-medium tracking-wide accent-yellow mb-3">
+            <h3 className="text-xs sm:text-sm md:text-base font-medium tracking-wide accent-yellow mb-2 sm:mb-3">
               Best skills on
             </h3>
-            <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-wrap">
               {skills.map((item, index) => (
                 <div 
                   className={cardStyle} 
                   key={index} 
-                  tabIndex={0}>
-                  <a href={item.url} target="_blank" rel="noopener noreferrer">
-                    {item.icon}
+                  tabIndex={0}
+                  style={{ width: '40px', height: '40px' }}
+                >
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full">
+                    <span className="text-2xl sm:text-3xl md:text-4xl">{item.icon}</span>
                   </a>
                 </div>
               ))}
@@ -147,10 +152,10 @@ const HeroSec = () => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 px-4">
+      <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0 px-4">
         <div
           ref={imageRef}
-          className="relative w-56 sm:w-72 md:w-80 lg:w-96 xl:w-[28rem] aspect-square rounded-full p-2 transition-all duration-300 hover:brightness-110 hover:scale-[1.05]"
+          className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full p-2 transition-all duration-300 hover:brightness-110 hover:scale-[1.05]"
           style={{
             background: '#e3e8ef',
             boxShadow: '10px 10px 20px #b8bdc8, -10px -10px 20px #ffffff'
@@ -158,14 +163,14 @@ const HeroSec = () => {
           tabIndex={0}
         >
           <motion.div
-            className="relative w-full h-full mb-34 cursor-pointer"
+            className="relative w-full h-full cursor-pointer"
             whileHover={{ scale: 1.08 }}
           >
             <motion.img
               src={hero}
               alt="Rehmat Ali"
               loading="eager"
-              className="w-full h-full object-cover rounded-full border-4 border-[#f5b841] shadow-[0_10px_25px_rgba(0,0,0,0.2)]"
+              className="w-full h-full object-cover rounded-full border-2 sm:border-4 border-[#f5b841] shadow-[0_10px_25px_rgba(0,0,0,0.2)]"
               animate={{
                 rotateX: [0, 2, -2, 0],
                 rotateY: [0, 2, -2, 0],
